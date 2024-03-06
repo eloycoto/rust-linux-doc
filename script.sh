@@ -15,10 +15,6 @@ make allnoconfig rust.config defconfig
 ./scripts/config --enable CONFIG_HAVE_RUST
 ./scripts/config --enable CONFIG_RUST_OVERFLOW_CHECKS
 
-cat .config | grep "RUST"
 make rustavailable
-cat .config
-make prepare
-cat .config | grep "RUST"
-make rustdoc
+make rustdoc LLVM=1
 cat .config | grep "RUST"
