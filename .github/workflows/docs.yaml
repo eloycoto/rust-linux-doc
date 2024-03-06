@@ -19,20 +19,16 @@ jobs:
 
       - name: Build with Flake.nix
         run: |
-          rustc --version
-          which rustc
           nix develop
-          rustc --version
-          which rustc
-          export sysroot = $(rustc --print sysroot)
-          echo "SYSROOT: ${sysroot}"
-          ls "$sysroot/lib/rustlib/src/rust/library/core/src/lib.rs" 
+          nix develop --command rustc --version
+          nix develop --command rustc --print sysroot
+          # which rustc
+          # export sysroot = $(rustc --print sysroot)
+          # echo "SYSROOT: ${sysroot}"
+          # ls "$sysroot/lib/rustlib/src/rust/library/core/src/lib.rs" 
 
       - name: Donwload kernel
         run: |
-            sysroot = $(rustc --print sysroot)
-            echo "SYSROOT: ${sysroot}"
-            ls "$sysroot/lib/rustlib/src/rust/library/core/src/lib.rs" 
             curl -o linux.tar.gz -L https://git.kernel.org/torvalds/t/linux-6.8-rc7.tar.gz
             ls -lah
             tar xzf linux.tar.gz
