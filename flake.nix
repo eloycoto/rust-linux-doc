@@ -37,6 +37,7 @@
           ];
 
           shellHook = ''
+            LF_PRELOAD=""
           '';
         };
       }
