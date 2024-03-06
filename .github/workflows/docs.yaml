@@ -24,6 +24,6 @@ jobs:
         run: |
             curl -o linux.tar.gz https://git.kernel.org/torvalds/t/linux-6.8-rc7.tar.gz
             ls -lah
-            tar -xvfz linux.tar.gz
+            tar xzf linux.tar.gz
             ls -lah
             cd linux-*
