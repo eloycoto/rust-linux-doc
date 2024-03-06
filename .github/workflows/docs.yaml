@@ -29,4 +29,4 @@ jobs:
 
       - name: Donwload kernel
         run: |
-            nix develop --command ./script.sh
+            LD_LIBRARY_PATH='' nix develop --command ./script.sh
