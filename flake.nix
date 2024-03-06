@@ -21,7 +21,6 @@
           buildInputs = [
             openssl
             pkg-config
-            elfutils
             zlib
             (rust-bin.stable.latest.default.override {
                 extensions = [ "rust-src" ];
@@ -34,7 +33,7 @@
             ncurses
             bc
             llvmPackages_17.bintools-unwrapped
-            elfio
+            elfutils
           ];
 
           shellHook = ''
