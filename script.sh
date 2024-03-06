@@ -7,7 +7,8 @@ make allnoconfig rust.config
 ./scripts/config --disable RANDSTRUCT
 #./scripts/config --disable CONFIG_HAVE_GCC_PLUGINS
 ./scripts/config --enable RUST
+./scripts/config --enable HAVE_RUST
 cat .config | grep "RUST"
 make rustavailable
-make rustdoc
+make rustdocs
 cat .config | grep "RUST"
