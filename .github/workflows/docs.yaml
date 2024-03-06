@@ -22,7 +22,7 @@ jobs:
 
       - name: Donwload kernel
         run: |
-            curl -o linux.tar.gz https://git.kernel.org/torvalds/t/linux-6.8-rc7.tar.gz
+            curl -o linux.tar.gz -L https://git.kernel.org/torvalds/t/linux-6.8-rc7.tar.gz
             ls -lah
             tar xzf linux.tar.gz
             ls -lah
