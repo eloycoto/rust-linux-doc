@@ -1,0 +1,25 @@
+name: docs
+on: [push]
+jobs:
+  create-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Nix
+        uses: cachix/install-nix-action@v22
+
+      - name: Cache Nix store
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/nix
+          key: ${{ runner.os }}-nix-${{ hashFiles('**/flake.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-nix-
+
+      - name: Build with Flake.nix
+        run: nix develop .
+
+      - name: Donwload kernel
+        run: |
+            curl -o linux.tar.gz https://git.kernel.org/torvalds/t/linux-6.8-rc7.tar.gz
