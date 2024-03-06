@@ -27,3 +27,13 @@ jobs:
             tar xzf linux.tar.gz
             ls -lah
             cd linux-*
+            make allnoconfig rust-config
+            ./scripts/config --disable GCC_PLUGINS
+            ./scripts/config --disable RANDSTRUCT
+            #./scripts/config --disable CONFIG_HAVE_GCC_PLUGINS
+            ./scripts/config --enable RUST
+            cat .config | grep "RUST"
+            make rustavailable
+            make rustdoc
+            cat .config | grep "RUST"
+
