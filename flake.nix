@@ -34,6 +34,7 @@
             bc
             llvmPackages_17.bintools-unwrapped
             elfutils
+            glibc
           ];
 
           shellHook = ''
