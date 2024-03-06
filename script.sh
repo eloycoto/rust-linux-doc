@@ -7,6 +7,9 @@ make allnoconfig rust.config
 ./scripts/config --disable GCC_PLUGINS
 ./scripts/config --disable RANDSTRUCT
 ./scripts/config --disable CONFIG_HAVE_GCC_PLUGINS
+./scripts/config --disable MODVERSIONS
+./scripts/config --disable RANDSTRUCT
+./scripts/config --disable DEBUG_INFO_BTF
 ./scripts/config --enable RUST
 ./scripts/config --enable HAVE_RUST
 ./scripts/config --enable CONFIG_RUST
