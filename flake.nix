@@ -2,7 +2,7 @@
   description = "linux dev example";
 
   inputs = {
-    nixpkgs.url      = "github:NixOS/nixpkgs/nixos-unstable";
+    # nixpkgs.url      = "github:NixOS/nixpkgs/nixos-unstable";
     rust-overlay.url = "github:oxalica/rust-overlay";
     flake-utils.url  = "github:numtide/flake-utils";
   };
@@ -37,7 +37,6 @@
           ];
 
           shellHook = ''
-            LF_PRELOAD=""
           '';
         };
       }
