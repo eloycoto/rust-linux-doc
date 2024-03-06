@@ -1,7 +1,8 @@
 set -e
 
-echo $LD_LIBRARY_PATH
-env
+#echo $LD_LIBRARY_PATH
+#env
+which ldd
 
 curl -o linux.tar.gz -L https://git.kernel.org/torvalds/t/linux-6.8-rc7.tar.gz
 tar xzf linux.tar.gz
