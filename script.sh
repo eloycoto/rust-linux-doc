@@ -3,8 +3,8 @@ set -e
 curl -o linux.tar.gz -L https://git.kernel.org/torvalds/t/linux-6.8-rc7.tar.gz
 tar xzf linux.tar.gz
 cd linux-*
-make allnoconfig rust.config kvm_guest.config
-./scripts/config --enable GCC_PLUGINS
+make allnoconfig rust.config defconfig
+#./scripts/config --enable GCC_PLUGINS
 ./scripts/config --disable RANDSTRUCT
 ./scripts/config --disable MODVERSIONS
 ./scripts/config --disable RANDSTRUCT
@@ -13,6 +13,8 @@ make allnoconfig rust.config kvm_guest.config
 ./scripts/config --enable HAVE_RUST
 ./scripts/config --enable CONFIG_RUST
 ./scripts/config --enable CONFIG_HAVE_RUST
+./scripts/config --enable CONFIG_RUST_OVERFLOW_CHECKS
+
 cat .config | grep "RUST"
 make rustavailable
 cat .config
