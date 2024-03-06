@@ -10,5 +10,5 @@ make allnoconfig rust.config
 ./scripts/config --enable HAVE_RUST
 cat .config | grep "RUST"
 make rustavailable
-make rustdocs
+make rustdoc
 cat .config | grep "RUST"
