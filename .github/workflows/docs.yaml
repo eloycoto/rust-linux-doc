@@ -19,7 +19,9 @@ jobs:
 
       - name: Build with Flake.nix
         run: |
-          nix develop .
+          rustc --version
+          which rustc
+          nix develop
           rustc --version
           which rustc
           export sysroot = $(rustc --print sysroot)
