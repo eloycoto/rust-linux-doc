@@ -33,6 +33,7 @@
             bison
             ncurses
             bc
+            llvmPackages_17.bintools-unwrapped
           ];
 
           shellHook = ''
