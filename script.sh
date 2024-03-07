@@ -18,7 +18,6 @@ echo "XXXXXXXXXXX --> Checks"
 rustc --version
 make rustavailable
 
-
 echo "XXXXXXXXXXX --> Final compilation"
 make rustdoc CC=clang HOSTCC=gcc LD=ld.lld LLVM=1
 cat .config | grep "RUST"
