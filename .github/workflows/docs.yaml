@@ -19,7 +19,7 @@ jobs:
 
       - name: Build with Flake.nix
         run: |
-          rm /usr/bin/ld
+          sudo rm /usr/bin/ld
           nix develop
           nix develop --command rustc --version
           nix develop --command rustc --print sysroot
