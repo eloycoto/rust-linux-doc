@@ -25,14 +25,15 @@
             (rust-bin.stable.latest.default.override {
                 extensions = [ "rust-src" ];
             })
-            lld_17
+            #lld_17
             gnumake
             rust-bindgen
             flex
             bison
             ncurses
             bc
-            llvmPackages_17.bintools-unwrapped
+            llvmPackages_16.bintools-unwrapped
+            llvmPackages_16.clang-unwrapped
             elfutils
             glibc
           ];
