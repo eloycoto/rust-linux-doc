@@ -20,7 +20,7 @@ make allnoconfig rust.config defconfig
 ./scripts/config --enable CONFIG_RUST_OVERFLOW_CHECKS
 
 make rustavailable
-make rustdoc LLVM=1
+make rustdoc
 cat .config | grep "RUST"
 
 ls Documentation/output/ -lah
