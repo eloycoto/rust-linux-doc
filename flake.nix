@@ -22,10 +22,9 @@
             openssl
             pkg-config
             zlib
-            (rust-bin.stable.latest.default.override {
+            (rust-bin.stable."1.74.1".default.override {
                 extensions = [ "rust-src" ];
             })
-            #lld_17
             gnumake
             rust-bindgen
             flex
