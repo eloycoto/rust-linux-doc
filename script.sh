@@ -23,3 +23,4 @@ make rustdoc CC=clang HOSTCC=gcc LD=ld.lld LLVM=1
 cat .config | grep "RUST"
 
 ls Documentation/output/ -lah
+cp -Rfv Documentation/output ../
