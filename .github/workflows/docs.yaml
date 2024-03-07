@@ -19,14 +19,9 @@ jobs:
 
       - name: Build with Flake.nix
         run: |
-          sudo rm /usr/bin/ld
           nix develop
           nix develop --command rustc --version
           nix develop --command rustc --print sysroot
-          # which rustc
-          # export sysroot = $(rustc --print sysroot)
-          # echo "SYSROOT: ${sysroot}"
-          # ls "$sysroot/lib/rustlib/src/rust/library/core/src/lib.rs" 
 
       - name: Donwload kernel
         run: |
