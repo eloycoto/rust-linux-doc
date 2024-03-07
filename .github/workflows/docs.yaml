@@ -26,3 +26,9 @@ jobs:
       - name: Donwload kernel
         run: |
             LD_LIBRARY_PATH='' nix develop --command ./script.sh
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: output
+          path: Documentation/output
